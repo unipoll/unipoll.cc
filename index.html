@@ -83,7 +83,7 @@
   </div>
 
   <div class="col-lg-8 mx-auto p-4 py-md-5">
-    <header class="d-flex justify-content-between align-items-center pb-3 mb-5 border-bottom">
+    <header class="d-flex justify-content-between align-items-center pb-3 mb-5">
       <a href="/" class="d-flex align-items-center text-body-emphasis text-decoration-none">
         <img id="logo" class="bi me-2" height="40" src="assets/brand/icon-outline.svg" />
         <span class="fs-1">University Polling</span>
@@ -94,70 +94,102 @@
     </header>
 
     <main>
-      <h1 class="text-body-emphasis">Get started with Unipoll</h1>
-      <p class="fs-5 col-md-8">Open Source Polling System of software for teachers and students. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      <p class="fs-5 col-md-12 mb-5" style="text-align: justify;">
+        University Polling is an open source project that aims to assist in research and data collection in the academic environment.
+        The Project consists of a API server, a web client and a mobile app, which together provide a complete solution for conducting polls and surveys.
+        All of these components are open source and can be used for free.
       </p>
-      
-
-      <hr class="col-lg-12 col-md-2 mb-5">
 
       <div class="row g-5">
-        <div class="col-md-6">
-          <h2 class="text-body-emphasis">Projects</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-          <ul class="list-unstyled ps-0">
+        <!-- API Section -->
+        <div class="col-md-4">
+          <h2 class="text-center">API</h2>
+          <hr />
+          <p style="text-align: justify;">
+            API server is the core of the project, it is responsible for storing and managing all data, as well as providing the necessary resources for the web client and mobile app.
+            The API server is developed in Python using the FastAPI framework and uses MongoDB as the database.
+          </p>
+          <hr />
+          <ul class="text-center list-unstyled ps-0">
             <li>
               <a class="icon-link mb-1" href="https://github.com/unipoll/API" rel="noopener"
                 target="_blank">
-                API server
+                GitHub Repository
               </a>
             </li>
+            <li>
+              <a class="icon-link mb-1" href="https://docs.unipoll.cc/api-docs" rel="noopener"
+                target="_blank">
+                Documentation
+              </a>
+            </li>
+            <li>
+              <a class="icon-link mb-1" href="https://unipoll.postman.co/workspace/API~149a004e-9e96-46b3-8458-a4c6c3f6fd78" rel="noopener"
+                target="_blank">
+                Postman Collection
+              </a>
+            </li>
+            <li>
+              <a class="icon-link mb-1" href="https://documenter.getpostman.com/view/19614303/2s9YR6ZDRA" rel="noopener"
+                target="_blank">
+                Postman Documentation
+              </a>
+            </li>
+            <li>
+              <a class="icon-link mb-1" href="https://api.unipoll.cc/docs" rel="noopener"
+                target="_blank">
+                Swagger API Reference
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- Web App Section -->
+        <div class="col-md-4">
+          <h2 class="text-center text-body-emphasis">Web UI</h2>
+          <hr />
+          <p style="text-align: justify;">
+            Web UI Application is the main interface for the project, it provides an example of a front end client that can be used to interact with the API server.
+            The application is responsible for providing the user with all the necessary means to create and manage polls and surveys, organize workspaces and users, as well as to view and analyze the results.
+            The application is developed using Angular 16 and Material library.
+          </p>
+          <hr />
+          <ul class="text-center list-unstyled ps-0">
             <li>
               <a class="icon-link mb-1" href="https://github.com/unipoll/Angular" rel="noopener"
                 target="_blank">
-                Angular Client
+                GitHub Repository
               </a>
             </li>
             <li>
-              <a class="icon-link mb-1" href="#" rel="noopener"
+              <a class="icon-link mb-1" href="https://docs.unipoll.cc/web-app-docs" rel="noopener"
                 target="_blank">
-                Mobile App
+                Documentation
               </a>
+            </li>
+            <li>
+              <a class="icon-link mb-1" href="https://app.unipoll.cc" rel="noopener"
+                target="_blank">
+                Demo
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- Mobile App Section -->
+        <div class="col-md-4">
+          <h2 class="text-center">Mobile App</h2>
+          <hr />
+          <p style="text-align: justify;">
+            Mobile App is an example of a mobile client that can be used to interact with the API server.
+            The application is developed using Flutter and Dart.
+          </p>
+          <hr />
+          <ul class="text-center list-unstyled ps-0">
+            <li>
+              <span><i>In development</i></span>
             </li>
           </ul>
         </div>
 
-        <div class="col-md-6">
-          <h2 class="text-body-emphasis">More links</h2>
-          <p>Read more detailed instructions and documentation on using or contributing to Bootstrap.</p>
-          <ul class="list-unstyled ps-0">
-            <li>
-              <a class="icon-link mb-1" href="#">
-                Link 1
-              </a>
-            </li>
-            <li>
-              <a class="icon-link mb-1" href="#">
-                Link 2
-              </a>
-            </li>
-            <li>
-              <a class="icon-link mb-1" href="#">
-                Link 3
-              </a>
-            </li>
-            <li>
-              <a class="icon-link mb-1" href="#">
-                Link 4
-              </a>
-            </li>
-            <li>
-              <a class="icon-link mb-1" href="#">
-                Link 5
-              </a>
-            </li>
-          </ul>
-        </div>
       </div>
     </main>
 
