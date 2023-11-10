@@ -85,7 +85,7 @@ jobs:
     - name: Get the version
       id: get_version
       run: |
-        tag=${{ needs.increment_version.outputs.version }}
+        tag=${{ needs.increment_version.outputs.new_tag }}
         version=$(echo $tag | tr -d 'v')
         echo $version
         echo "version=$version" >> "$GITHUB_OUTPUT"
