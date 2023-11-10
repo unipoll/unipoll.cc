@@ -85,7 +85,8 @@ jobs:
     - name: Get the version
       id: get_version
       run: |
-        version=$(echo $version | tr -d 'v')
+        tag=${{ steps.get_version.outputs.version }}
+        version=$(echo $tag | tr -d 'v')
         echo "version=$version" >> "$GITHUB_OUTPUT"
 
     - name: Build and push Docker image
