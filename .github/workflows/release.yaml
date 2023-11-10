@@ -58,6 +58,39 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         tag_name: ${{ needs.increment_version.outputs.new_tag }}
-        release_name: Release ${{ steps.get_version.outputs.VERSION }}
+        release_name: Release ${{ needs.increment_version.outputs.new_tag }}
         draft: false
         prerelease: false
+  docker:
+    needs: increment_version
+    runs-on: arc-runner-k8s
+    steps:
+    - name: Force Install GIT latest
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y software-properties-common
+        sudo add-apt-repository -y ppa:git-core/ppa
+        sudo apt-get update
+        sudo apt-get install -y git
+
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Login to Docker Hub
+      uses: docker/login-action@v1 
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+    - name: Get the version
+      id: get_version
+      run: |
+        version=$(echo $version | tr -d 'v')
+        echo "version=$version" >> "$GITHUB_OUTPUT"
+
+    - name: Build and push Docker image
+      uses: docker/build-push-action@v2
+      with:
+        context: .
+        push: true
+        tags: unipoll/unipoll-website:${{ steps.get_version.outputs.version }}, unipoll/unipoll-website:latest
