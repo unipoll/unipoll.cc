@@ -5,7 +5,7 @@ FROM nginx:alpine
 WORKDIR /usr/share/nginx/html
 
 # Copy the static website files
-COPY . .
+COPY src/ .
 
 # Expose the port the app runs on
 EXPOSE 80
