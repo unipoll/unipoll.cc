@@ -32,7 +32,7 @@ jobs:
         echo "Latest tag: $latest_tag"
         new_tag="$(echo $latest_tag | awk -F. '{$NF = $NF + 1;} 1' | sed 's/ /./g')"
         echo "New tag: $new_tag"
-        echo "new_tag=$new_tag" >> $GITHUB_OUTPUT
+        echo "new_tag=$new_tag" >> "$GITHUB_OUTPUT"
 
     - name: Push new tag
       run: |
