@@ -1,6 +1,7 @@
 name: Build and Push Docker image
 
 on:
+  workflow_dispatch:
   push:
     tags:
       - 'v*'
@@ -29,7 +30,7 @@ jobs:
 
     - name: Get the version
       id: get_version
-      run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}
+      run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> "$GITHUB_OUTPUT"
 
     - name: Build and push Docker image
       uses: docker/build-push-action@v2
